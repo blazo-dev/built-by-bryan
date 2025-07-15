@@ -1,0 +1,17 @@
+---
+import { portfolioData } from "../../data/portfolioData";
+
+const { content } = portfolioData.about;
+---
+
+<p class="text-lg text-gray-400 font-light leading-relaxed">
+    {
+        content.map(({ text, emphasis }) =>
+            emphasis ? (
+                <strong class="text-amber-300 font-semibold">{text}</strong>
+            ) : (
+                text
+            )
+        )
+    }
+</p>

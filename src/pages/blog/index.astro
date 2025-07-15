@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+    <section class="blog content">
+        <h1 class="blog-title">🛠️ Blog in progress</h1>
+        <p class="blog-message">
+            I'm working on sharing insights, experiences, and project breakdowns
+            here soon. Stay tuned!
+        </p>
+    </section>
+</Layout>
+
+<style lang="scss">
+    .blog {
+        padding: 4rem 1rem;
+        text-align: center;
+
+        &-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary, #fff);
+        }
+
+        &-message {
+            font-size: 1.1rem;
+            color: var(--text-secondary, #aaa);
+            max-width: 500px;
+            margin-inline: auto;
+        }
+    }
+</style>

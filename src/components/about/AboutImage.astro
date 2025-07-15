@@ -1,0 +1,13 @@
+---
+import { portfolioData } from "../../data/portfolioData";
+
+const { imageUrl, imageAlt } = portfolioData.about;
+---
+
+<div class="flex justify-center">
+    <div
+        class="w-96 h-80 bg-custom-dark rounded-2xl flex items-center justify-center overflow-hidden"
+    >
+        <img src={imageUrl} alt={imageAlt} class="h-full w-full object-cover" />
+    </div>
+</div>

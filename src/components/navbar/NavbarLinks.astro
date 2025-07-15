@@ -1,0 +1,18 @@
+---
+import { portfolioData } from "../../data/portfolioData";
+const { sections } = portfolioData;
+const navItems = sections.filter(({ showInNav }) => showInNav);
+---
+
+<div class="ml-10 flex items-baseline space-x-8">
+    {
+        navItems.map(({ path, label }) => (
+            <a
+                href={path}
+                class="nav-link text-gray-400 px-3 py-2 text-sm font-medium"
+            >
+                {label}
+            </a>
+        ))
+    }
+</div>

@@ -1,0 +1,34 @@
+---
+import NavbarBrand from "./NavbarBrand.astro";
+import NavbarLinks from "./NavbarLinks.astro";
+import MobileMenuButton from "./MobileMenuButton.astro";
+import MobileMenu from "./MobileMenu.astro";
+---
+
+<nav class="bg-custom-dark shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <NavbarBrand />
+            <div class="hidden lg:block">
+                <NavbarLinks />
+            </div>
+            <div class="lg:hidden">
+                <MobileMenuButton />
+            </div>
+        </div>
+    </div>
+    <MobileMenu />
+</nav>
+<script is:inline>
+    // Wait for the DOM to fully load before running the script
+    document.addEventListener("DOMContentLoaded", () => {
+        // Toggle the mobile navigation menu
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // When the hamburger button is clicked, show/hide the mobile menu
+        mobileMenuBtn?.addEventListener("click", () => {
+            mobileMenu?.classList.toggle("hidden");
+        });
+    });
+</script>

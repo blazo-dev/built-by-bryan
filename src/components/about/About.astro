@@ -1,0 +1,36 @@
+---
+// components/AboutSection.astro
+import AboutSummary from "./AboutSummary.astro";
+import HighlightCard from "./HighlightCard.astro";
+import { portfolioData } from "../../data/portfolioData";
+import AboutImage from "./AboutImage.astro";
+
+const { highlightCards, title } = portfolioData.about;
+---
+
+<section id="about" class="min-h-screen flex items-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="section-fade space-y-8">
+            <h2 class="text-4xl font-bold text-center text-sky-500">
+                {title}
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <AboutSummary />
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {
+                            highlightCards.map(({ title, description }) => (
+                                <HighlightCard
+                                    title={title}
+                                    description={description}
+                                />
+                            ))
+                        }
+                    </div>
+                </div>
+                <AboutImage />
+            </div>
+        </div>
+    </div>
+</section>
