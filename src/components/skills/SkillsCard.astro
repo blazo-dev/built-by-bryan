@@ -1,0 +1,37 @@
+---
+import SkillIcon from "./SkillIcon.astro";
+import type { SkillCategory } from "../../types/skills";
+
+interface Props extends SkillCategory {}
+
+const { title, icons = [], items = [] } = Astro.props;
+const isIconGrid = icons.length > 0;
+---
+
+<div class="bg-custom-dark p-8 rounded-2xl shadow-lg card-hover">
+    <h3 class="text-2xl font-bold text-sky-500 mb-6 text-center">
+        {title}
+    </h3>
+
+    {
+        isIconGrid ? (
+            <div class="grid grid-cols-3 gap-6">
+                {icons.map((skill) => (
+                    <SkillIcon
+                        label={skill.label}
+                        iconClass={skill.iconClass}
+                    />
+                ))}
+            </div>
+        ) : (
+            <div class="space-y-4">
+                {items.map((item) => (
+                    <div class="flex items-center">
+                        <i class={`text-blue-600 mr-3 ${item.iconClass}`} aria-hidden="true" />
+                        <span>{item.label}</span>
+                    </div>
+                ))}
+            </div>
+        )
+    }
+</div>

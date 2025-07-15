@@ -1,0 +1,23 @@
+---
+import { portfolioData } from "../../data/portfolioData";
+import SkillsCard from "./SkillsCard.astro";
+
+const { skills } = portfolioData;
+---
+
+<section id="skills" class="min-h-screen flex items-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-fade">
+            <h2 class="text-4xl font-bold text-center text-sky-500 mb-16">
+                {skills.title}
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                {
+                    skills.categories.map((category) => (
+                        <SkillsCard {...category} />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

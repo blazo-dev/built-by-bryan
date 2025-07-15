@@ -1,0 +1,8 @@
+---
+const { label, iconClass } = Astro.props;
+---
+
+<div class="skill-icon text-center">
+    <i class={`text-4xl mb-2 ${iconClass}`} aria-hidden="true"></i>
+    <p class="text-sm font-medium">{label}</p>
+</div>
