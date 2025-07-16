@@ -1,9 +1,8 @@
 ---
-import { portfolioData } from "../data/portfolioData";
+import { contactData } from "../data/contactData";
 
-const { links } = portfolioData.contact;
-const { availability } = portfolioData.personalInfo;
-const getInTouchLink = links.find((link) => link.label === "LinkedIn");
+const { links, availability } = contactData;
+const getInTouchLink = links.find((link) => link.title === "LinkedIn");
 ---
 
 <div
@@ -15,7 +14,7 @@ const getInTouchLink = links.find((link) => link.label === "LinkedIn");
     </div>
     <a
         class="block px-4 py-1.5 text-sm font-medium"
-        href={getInTouchLink?.url}
+        href={getInTouchLink?.href}
         target="_blank"
     >
         {availability}

@@ -1,0 +1,25 @@
+---
+import WosHeader from "./WosHeader.astro";
+import WosPhases from "./WosPhases.astro";
+import WosQuote from "./WosQuote.astro";
+import { wosData } from "../../data/wosData";
+---
+
+<section id="wos" class="min-h-screen flex items-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-fade space-y-6">
+            <WosHeader {...wosData} />
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="bg-custom-dark bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm mb-8"
+                >
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        {wosData.description}
+                    </p>
+                    <WosPhases phases={wosData.phases} />
+                </div>
+                <WosQuote quote={wosData.quote} />
+            </div>
+        </div>
+    </div>
+</section>

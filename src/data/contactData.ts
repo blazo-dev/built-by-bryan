@@ -1,5 +1,6 @@
 export const contactData = {
     title: "Let's Connect",
+    availability: "Available to connect",
     links: [
         {
             href: "https://linkedin.com/in/bryanlazodev/",

@@ -1,0 +1,32 @@
+---
+import type { WosPhase } from "../../types/wosTypes";
+
+interface Props {
+    phases: WosPhase[];
+}
+
+const { phases } = Astro.props;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    {
+        phases.map((phase, index) => {
+            const isLast = index === phases.length - 1;
+            const isOdd = phases.length % 2 === 1;
+
+            const spanClass = isLast && isOdd ? "lg:col-span-2" : "";
+
+            return (
+                <div
+                    class={`bg-custom-darkest bg-opacity-10 p-6 rounded-lg ${spanClass}`}
+                >
+                    <h4 class="text-xl font-semibold mb-3 flex items-center">
+                        <i class={`${phase.icon} mr-3 text-sky-500`} />
+                        {phase.title}
+                    </h4>
+                    <p class="text-gray-400">{phase.content}</p>
+                </div>
+            );
+        })
+    }
+</div>

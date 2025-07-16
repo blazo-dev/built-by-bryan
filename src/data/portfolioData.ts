@@ -4,19 +4,11 @@ export const portfolioData = {
         name: "Bryan Lazo",
         formalImage: "/images/me.png",
         imageAlt: "Bryan Lazo, Full-Stack Developer",
-        availability: "Available to connect",
         headline: "Hey, I'm Bryan Lazo",
         summary:
             "+3 years of experience building scalable web apps & software solutions",
         description:
             "Portfolio of Bryan Lazo, a Full-Stack Developer showcasing professional experience, technical skills, and full-stack projects. Includes work history, education, personal projects, and training through the WOS & ACE Technical Talent Program.",
-    },
-    contact: {
-        links: [
-            { label: "LinkedIn", url: "https://linkedin.com/in/bryanlazodev/" },
-            { label: "GitHub", url: "https://github.com/blazo-dev" },
-            { label: "Get in touch", url: "mailto:blazo.dev@gmail.com" },
-        ],
     },
     workExperience: [
         {
