@@ -138,7 +138,7 @@ export const portfolioData = {
         ],
     },
     skills: {
-        title: "Technical Skills",
+        title: "Skills",
         categories: [
             {
                 title: "Technologies",
@@ -217,12 +217,6 @@ export const portfolioData = {
             showInNav: true,
         },
         {
-            id: "about",
-            label: "About",
-            path: "/#about",
-            showInNav: true,
-        },
-        {
             id: "experience",
             label: "Experience",
             path: "/#experience",
@@ -238,6 +232,12 @@ export const portfolioData = {
             id: "wos",
             label: "WOS",
             path: "/#wos",
+            showInNav: true,
+        },
+        {
+            id: "about",
+            label: "About",
+            path: "/#about",
             showInNav: true,
         },
         {
