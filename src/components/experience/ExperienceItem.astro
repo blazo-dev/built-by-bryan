@@ -1,0 +1,32 @@
+---
+import type { ExperienceItem } from "../../types/experienceTypes";
+
+const {
+    title,
+    company,
+    location,
+    mode,
+    startDate,
+    endDate,
+    responsibilities,
+    icon,
+} = Astro.props as ExperienceItem;
+---
+
+<div class="flex items-start">
+    <div
+        class="timeline-dot bg-sky-500 w-8 h-8 rounded-full flex items-center justify-center mr-8 mt-1"
+    >
+        <i class={`${icon} text-gray-100 text-md`}></i>
+    </div>
+    <div class="bg-custom-dark p-6 rounded-lg shadow-md card-hover flex-1">
+        <h3 class="text-xl font-semibold text-sky-500 mb-1">{title}</h3>
+        <p class="text-amber-300 font-medium">{company}</p>
+        <p class="text-gray-400 text-md mb-2 italic">
+            {location} • {mode} • {startDate} – {endDate}
+        </p>
+        <ul class="list-disc list-inside text-gray-400 space-y-1 text-md">
+            {responsibilities.map((item) => <li>{item}</li>)}
+        </ul>
+    </div>
+</div>

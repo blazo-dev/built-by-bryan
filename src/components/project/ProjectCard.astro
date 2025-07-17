@@ -1,0 +1,55 @@
+---
+import type { Project } from "../../types/projectsTypes";
+
+// Props
+const { title, subtitle, description, icon, technologies, features } =
+    Astro.props as Project;
+---
+
+<div
+    class="bg-gradient-to-br bg-custom-dark p-8 rounded-2xl shadow-lg card-hover"
+>
+    <div class="flex items-center mb-6">
+        <div
+            class="bg-sky-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+        >
+            <i class={`${icon} text-gray-100 text-xl`}></i>
+        </div>
+        <div>
+            <h3 class="text-2xl font-bold text-sky-500">{title}</h3>
+            <p class="text-amber-300 font-medium">{subtitle}</p>
+        </div>
+    </div>
+    <p class="text-gray-400 text-lg mb-6 leading-relaxed">{description}</p>
+
+    <div class="mb-6">
+        <h4 class="text-lg font-semibold text-sky-500 mb-3">
+            Technologies Used:
+        </h4>
+        <div class="flex flex-wrap gap-3">
+            {
+                technologies.map((tech) => (
+                    <span
+                        class={`${tech.bg} ${tech.text} px-3 py-1 rounded-full text-sm font-medium`}
+                    >
+                        {tech.name}
+                    </span>
+                ))
+            }
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {
+            features.map((feature) => (
+                <div class="bg-custom-darkest p-4 rounded-lg">
+                    <i class={`${feature.icon} text-sky-500 text-xl mb-2`} />
+                    <h5 class="font-semibold text-amber-300">
+                        {feature.title}
+                    </h5>
+                    <p class="text-gray-400 text-sm">{feature.description}</p>
+                </div>
+            ))
+        }
+    </div>
+</div>

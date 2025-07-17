@@ -1,7 +1,6 @@
 ---
-import { portfolioData } from "../../data/portfolioData";
-const { sections } = portfolioData;
-const navItems = sections.filter(({ showInNav }) => showInNav);
+import { navData } from "../../data/navData";
+const navItems = navData.filter(({ showInNav }) => showInNav);
 ---
 
 <div id="mobile-menu" class="lg:hidden hidden bg-custom-dark">

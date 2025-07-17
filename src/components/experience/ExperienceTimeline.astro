@@ -1,0 +1,10 @@
+---
+import { workExperiences } from "../../data/experienceData";
+import ExperienceItem from "./ExperienceItem.astro";
+---
+
+<div class="timeline-line max-w-4xl mx-auto">
+    <div class="space-y-12">
+        {workExperiences.map((item) => <ExperienceItem {...item} />)}
+    </div>
+</div>

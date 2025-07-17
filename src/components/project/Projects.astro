@@ -1,0 +1,17 @@
+---
+import { projectsData } from "../../data/projectsData";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section id="projects" class="min-h-screen flex items-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-fade">
+            <h2 class="text-4xl font-bold text-center text-sky-500 mb-16">
+                Featured Projects
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-12">
+                {projectsData.map((project) => <ProjectCard {...project} />)}
+            </div>
+        </div>
+    </div>
+</section>

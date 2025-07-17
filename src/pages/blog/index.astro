@@ -3,31 +3,20 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
-    <section class="blog content">
-        <h1 class="blog-title">🛠️ Blog in progress</h1>
-        <p class="blog-message">
-            I'm working on sharing insights, experiences, and project breakdowns
-            here soon. Stay tuned!
-        </p>
+    <section class="blog content text-center py-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl font-bold text-sky-500 mb-4">
+                🛠️ Blog in Progress
+            </h1>
+            <p class="text-gray-300 text-lg mb-6">
+                I'm currently building this space to share personal insights,
+                development tips, and deep dives into the projects I've worked
+                on.
+            </p>
+            <p class="text-gray-400">
+                Come back soon to explore my journey as a developer and discover
+                the thoughts behind the code.
+            </p>
+        </div>
     </section>
 </Layout>
-
-<style lang="scss">
-    .blog {
-        padding: 4rem 1rem;
-        text-align: center;
-
-        &-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary, #fff);
-        }
-
-        &-message {
-            font-size: 1.1rem;
-            color: var(--text-secondary, #aaa);
-            max-width: 500px;
-            margin-inline: auto;
-        }
-    }
-</style>
