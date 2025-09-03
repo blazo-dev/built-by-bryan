@@ -17,4 +17,6 @@ export interface Project {
     icon: string;
     technologies: Technology[];
     features: Feature[];
+    repoLink: string;
+    previewLink: string;
 }

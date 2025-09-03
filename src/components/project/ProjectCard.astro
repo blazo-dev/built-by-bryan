@@ -2,14 +2,22 @@
 import type { Project } from "../../types/projectsTypes";
 
 // Props
-const { title, subtitle, description, icon, technologies, features } =
-    Astro.props as Project;
+const {
+    title,
+    subtitle,
+    description,
+    icon,
+    technologies,
+    features,
+    previewLink,
+    repoLink,
+} = Astro.props as Project;
 ---
 
 <div
-    class="bg-gradient-to-br bg-custom-dark p-8 rounded-2xl shadow-lg card-hover"
+    class="bg-gradient-to-br bg-custom-dark p-8 rounded-2xl shadow-lg card-hover space-y-6"
 >
-    <div class="flex items-center mb-6">
+    <div class="flex items-center">
         <div
             class="bg-sky-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4"
         >
@@ -22,7 +30,7 @@ const { title, subtitle, description, icon, technologies, features } =
     </div>
     <p class="text-gray-400 text-lg mb-6 leading-relaxed">{description}</p>
 
-    <div class="mb-6">
+    <div class="">
         <h4 class="text-lg font-semibold text-sky-500 mb-3">
             Technologies Used:
         </h4>
@@ -51,5 +59,26 @@ const { title, subtitle, description, icon, technologies, features } =
                 </div>
             ))
         }
+    </div>
+
+    <div class="flex gap-4">
+        <a
+            href={repoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-medium px-4 py-2 rounded-lg transition-colors cursor-pointer"
+        >
+            <i class="fa-brands fa-github"></i>
+            Repository
+        </a>
+        <a
+            href={previewLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 font-medium px-4 py-2 rounded-lg transition-colors cursor-pointer"
+        >
+            <i class="fa-solid fa-up-right-from-square"></i>
+            Preview
+        </a>
     </div>
 </div>
