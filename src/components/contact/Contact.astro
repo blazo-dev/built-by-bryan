@@ -5,7 +5,7 @@ import ContactCard from "./ContactCard.astro";
 const { title, links, cta } = contactData;
 ---
 
-<section id="contact" class="min-h-screen flex items-center pt-16">
+<section id="contact" class="flex items-center py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-fade">
             <h2 class="text-4xl font-bold text-center text-sky-500 mb-16">
@@ -15,7 +15,7 @@ const { title, links, cta } = contactData;
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     {links.map((link) => <ContactCard {...link} />)}
                 </div>
-                <div class="text-center">
+                <div class="flex items-center justify-center">
                     <a
                         href={cta.href}
                         class="border-2 border-sky-500 text-sky-500 text-xl px-8 py-3 rounded-lg font-semibold hover:bg-sky-500 hover:text-gray-100 hover:border-sky-500 transition duration-300 text-center"

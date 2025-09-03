@@ -1,15 +1,15 @@
 ---
 // components/AboutSection.astro
+import { aboutData } from "../../data/aboutData";
+import AboutImage from "./AboutImage.astro";
 import AboutSummary from "./AboutSummary.astro";
 import HighlightCard from "./HighlightCard.astro";
-import AboutImage from "./AboutImage.astro";
-import { aboutData } from "../../data/aboutData";
 
 const { highlightCards, title } = aboutData;
 ---
 
-<section id="about" class="min-h-screen flex items-center pt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+<section id="about" class="flex items-center py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-fade space-y-8">
             <h2 class="text-4xl font-bold text-center text-sky-500">
                 {title}

@@ -25,10 +25,18 @@ import MobileMenu from "./MobileMenu.astro";
         // Toggle the mobile navigation menu
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
 
         // When the hamburger button is clicked, show/hide the mobile menu
         mobileMenuBtn?.addEventListener("click", () => {
             mobileMenu?.classList.toggle("hidden");
+        });
+
+        // Smooth scroll for navigation links
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                mobileMenu?.classList.toggle("hidden", true);
+            });
         });
     });
 </script>

@@ -2,7 +2,7 @@
 import { footerData } from "../../data/footerData";
 ---
 
-<footer class="bg-custom-dark text-gray-100 py-12">
+<footer class="bg-custom-dark text-gray-100 py-12 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
             <div class="text-gray-600 text-sm mb-3">
@@ -14,21 +14,6 @@ import { footerData } from "../../data/footerData";
                 >
                     {footerData.name}</a
                 >
-                using
-                {
-                    footerData.techStack.map((tech, index) => (
-                        <>
-                            <a
-                                href={tech.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="font-medium underline hover:text-amber-300 duration-300"
-                            >
-                                {tech.name}</a>
-                            {index < footerData.techStack.length - 1 && ", "}
-                        </>
-                    ))
-                }
             </div>
         </div>
     </div>

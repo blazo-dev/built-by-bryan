@@ -8,7 +8,7 @@ const { title, name, description } = personalData;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth text-sm md:text-base">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -41,17 +41,6 @@ const { title, name, description } = personalData;
 
     .bg-custom-dark {
         background-color: #1b1d1f;
-    }
-
-    .card-hover {
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-    }
-
-    .card-hover:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     }
 
     .timeline-line {
@@ -105,24 +94,6 @@ const { title, name, description } = personalData;
 <script is:inline>
     // Wait for the DOM to fully load before running the script
     document.addEventListener("DOMContentLoaded", () => {
-        // Add smooth scrolling to all anchor links that point to IDs (#section)
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent default jump
-                const target = document.querySelector(
-                    this.getAttribute("href")
-                ); // Get the target section
-                if (target) {
-                    // Scroll to the section smoothly
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                    });
-                    // Close the mobile menu if it's open
-                    mobileMenu?.classList.add("hidden");
-                }
-            });
-        });
 
         // Options for the IntersectionObserver (for fade-in animations)
         const observerOptions = {

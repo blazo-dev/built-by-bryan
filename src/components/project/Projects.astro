@@ -3,15 +3,71 @@ import { projectsData } from "../../data/projectsData";
 import ProjectCard from "./ProjectCard.astro";
 ---
 
-<section id="projects" class="min-h-screen flex items-center pt-16">
+<section id="projects" class="flex items-center py-16 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-fade">
             <h2 class="text-4xl font-bold text-center text-sky-500 mb-16">
                 Featured Projects
             </h2>
-            <div class="max-w-4xl mx-auto space-y-12">
-                {projectsData.map((project) => <ProjectCard {...project} />)}
+            <div class="relative max-w-[292px] sm:max-w-4xl mx-auto">
+                <button
+                    id="btn-right"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10
+                 text-sky-500/50 hover:text-sky-500
+                 p-4 rounded-full flex items-center justify-center
+                 duration-300 cursor-pointer text-2xl"
+                >
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button
+                    id="btn-left"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10
+                 text-sky-500/50 hover:text-sky-500
+                 p-4 rounded-full flex items-center justify-center
+                 duration-300 cursor-pointer text-2xl"
+                >
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <!-- Slider Container -->
+                <div
+                    id="slider"
+                    class="relative flex overflow-x-scroll scroll-smooth snap-x snap-mandatory"
+                >
+                    {
+                        projectsData.map((project) => (
+                            <div class="sticky snap-center left-0 shrink-0 w-full">
+                                <ProjectCard {...project} />
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    #slider {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    #slider::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
+<script is:inline>
+    const slider = document.getElementById("slider");
+    const btnLeft = document.getElementById("btn-left");
+    const btnRight = document.getElementById("btn-right");
+
+    if (slider && btnLeft && btnRight) {
+        btnLeft.addEventListener("click", () => {
+            slider.scrollBy({ left: -slider.clientWidth, behavior: "smooth" });
+        });
+        btnRight.addEventListener("click", () => {
+            slider.scrollBy({ left: slider.clientWidth, behavior: "smooth" });
+        });
+    }
+</script>

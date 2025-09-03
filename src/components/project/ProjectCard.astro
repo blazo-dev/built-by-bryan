@@ -15,7 +15,7 @@ const {
 ---
 
 <div
-    class="bg-gradient-to-br bg-custom-dark p-8 rounded-2xl shadow-lg card-hover space-y-6"
+    class="flex flex-col gap-6 bg-gradient-to-br bg-custom-dark p-8 rounded-2xl shadow-lg h-full"
 >
     <div class="flex items-center">
         <div
@@ -28,7 +28,7 @@ const {
             <p class="text-amber-300 font-medium">{subtitle}</p>
         </div>
     </div>
-    <p class="text-gray-400 text-lg mb-6 leading-relaxed">{description}</p>
+    <p class="text-gray-400 text-lg leading-relaxed">{description}</p>
 
     <div class="">
         <h4 class="text-lg font-semibold text-sky-500 mb-3">
@@ -61,7 +61,7 @@ const {
         }
     </div>
 
-    <div class="flex gap-4">
+    <div class="grid gap-4 sm:grid-cols-2 mt-auto">
         <a
             href={repoLink}
             target="_blank"

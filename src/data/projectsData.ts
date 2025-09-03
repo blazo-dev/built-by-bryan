@@ -19,18 +19,6 @@ export const geoClientProject: Project = {
     ],
     features: [
         {
-            icon: "fa-solid fa-users",
-            title: "Client management",
-            description:
-                "Register unlimited clients and keep their data organized in one place.",
-        },
-        {
-            icon: "fa-solid fa-calendar-days",
-            title: "Visit scheduling",
-            description:
-                "Plan visits or recurring maintenance tasks and receive timely reminders.",
-        },
-        {
             icon: "fa-solid fa-map",
             title: "Interactive map",
             description:
@@ -42,13 +30,37 @@ export const geoClientProject: Project = {
             description:
                 "Generate optimized routes from the first to the last client to maximize efficiency.",
         },
+    ],
+};
+
+export const mvcTailwindTemplate: Project = {
+    title: "Lazt.MvcTailwind.Template",
+    subtitle: "ASP.NET MVC + TailwindCSS Starter",
+    previewLink: "https://www.nuget.org/packages/Lazt.MvcTailwind.Template/",
+    repoLink: "https://github.com/blazo-dev/mvclazt/",
+    description:
+        "A ready-to-use ASP.NET MVC template fully integrated with TailwindCSS. Designed as a solid starting point for modern web applications, it provides a clean MVC structure, responsive UI, and hot reload support. Published on NuGet for quick installation and project setup.",
+    icon: "fa-solid fa-code",
+    technologies: [
+        { name: ".NET 8", bg: "bg-purple-700", text: "text-white" },
+        { name: "ASP.NET MVC", bg: "bg-indigo-600", text: "text-white" },
+        { name: "TailwindCSS", bg: "bg-sky-400", text: "text-slate-900" },
+        { name: "Node.js", bg: "bg-green-600", text: "text-white" },
+    ],
+    features: [
         {
-            icon: "fa-solid fa-bell",
-            title: "Notifications",
+            icon: "fa-solid fa-bolt",
+            title: "Hot Reload",
             description:
-                "Get alerts for upcoming visits and clients requiring follow-up.",
+                "Run your app with `dotnet watch run` and see changes instantly.",
+        },
+        {
+            icon: "fa-solid fa-terminal",
+            title: "CLI Ready",
+            description:
+                "Install from NuGet and scaffold projects directly with the .NET CLI.",
         },
     ],
 };
 
-export const projectsData: Project[] = [geoClientProject];
+export const projectsData: Project[] = [geoClientProject, mvcTailwindTemplate];
